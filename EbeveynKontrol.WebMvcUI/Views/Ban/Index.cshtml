@@ -1,0 +1,32 @@
+﻿@model List<EbeveynKontrol.Entity.Ban>
+<div class="container">
+    <table class="table table-hover mt-5">
+        <thead>
+            <tr class="table-primary">
+
+                <th>Yasaklı Kelimeler</th>
+                <th style="width: 5%">İşlem</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var ban in Model)
+            {
+                <tr>
+                    <td>@ban.Name</td>
+
+                    <td>
+                        <a href="/Ban/Delete/@ban.Id" class="btn btn-danger">Kaldır</a>
+                    </td>
+                </tr>
+            }
+
+            <tr>
+                <td colspan="2">
+                    <a href="/Ban/Add" class="btn btn-primary">Yasaklı Kelime Ekle</a>
+                </td>
+
+
+            </tr>
+        </tbody>
+    </table>
+</div>
